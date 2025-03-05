@@ -1,0 +1,224 @@
+@charset "EUC-KR";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+#wrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+/* aside */
+aside{
+    width: 17%;
+    height: 100%;
+}
+aside h1{
+    width: 100%;
+    height: 20%;
+    background-color: #000000;
+    font-size: 30px;
+    padding: 20px 20px;
+}
+aside h1 a{
+    display: inline-block;
+   padding: 15px 30px;
+    color: #fff;
+}
+aside nav{
+    width: 100%;
+    height: 80%;
+    background-color: #000000;
+}
+aside nav ul {
+    padding: 30px 40px;
+}
+aside nav ul li a{
+    color: #fff;
+    line-height: 2.5;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+aside nav ul li a:hover{
+    background-color: #9c9c9c;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+/* main */
+main{
+    width: 83%;
+    height: 100%;
+    background-color: #000;
+}
+#main_header{
+    width: 100%;
+    height: 10%;
+    background-color: #000000;
+    position: relative;
+}
+#main_header button{
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    font-size: 14px;
+    border-radius: 30px;
+    border: 0;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+#main_header a{
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+}
+#main_header a:hover{
+    background-color: #cecece;
+    border-radius: 30px;
+    transition: 0.2s;
+    color: #000;
+}
+
+/* contents */
+#contents{
+    width: 91%;
+    height: 90%;
+    background-color: #000;
+}
+#contents .chat_container{
+    width: 800px;
+    height: 90%;
+    background-color: #fff;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #fff;
+}
+#contents .chat{
+    width: 100%;
+    height: 70%;
+    padding: 20px 18px 0 22px;
+    display: flex;
+}
+#contents .message{
+    animation: fadeIn 0.3s ease-in-out forwards;
+    font-size: 18px;
+}
+#typing-indicator {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+
+#contents .talk_con{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 20px;
+}
+#contents .talk_con div:nth-child(2){
+    display: none;
+}
+
+.message.sent {
+    background-color: #746a6a;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #E5E5EA;
+    color: black;
+    align-self: flex-start;
+}
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+.chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    max-width: 70%;
+    padding: 12px;
+    border-radius: 20px;
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+#contents .in_text{
+    width: 100%;
+    height: 20%;
+    margin-top: 70px;
+    position: relative;
+}
+#contents textarea{
+    resize: none;
+    font-size: 17px;
+    padding: 15px 60px 15px 25px;   
+    border-radius: 40px;
+    overflow: hidden;
+    width: 780px;
+    height: 113px;
+    margin-left: 10px;
+}
+#contents .btn_submit {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    background: url(../img/icons8-slide-up-64.png);
+    background-repeat: no-repeat; 
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+    border: 0;
+    
+}
+#contents .btn_submit:hover {
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { opacity: 1; 
+        transform: translateY(0); 
+    }
+}

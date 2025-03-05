@@ -1,0 +1,208 @@
+@charset "EUC-KR";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+#wrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+/* aside */
+aside{
+    width: 17%;
+    height: 100%;
+}
+aside h1{
+    width: 100%;
+    height: 20%;
+    background-color: #000000;
+    font-size: 30px;
+    padding: 20px 20px;
+}
+aside h1 a{
+    display: inline-block;
+   padding: 15px 30px;
+    color: #fff;
+}
+aside nav{
+    width: 100%;
+    height: 80%;
+    background-color: #000000;
+}
+aside nav ul {
+    padding: 30px 40px;
+}
+aside nav ul li a{
+    color: #fff;
+    line-height: 2.5;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+aside nav ul li a:hover{
+    background-color: #9c9c9c;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+/* main */
+main{
+    width: 83%;
+    height: 100%;
+    background-color: #000;
+}
+#main_header{
+    width: 100%;
+    height: 10%;
+    background-color: #000000;
+    position: relative;
+}
+
+
+/* contents */
+#contents{
+    width: 91%;
+    height: 90%;
+}
+
+#clock{
+    text-align: center;
+    font-size: 4.3rem;
+    margin: 60px;
+    color: #fff;
+}
+#calendar{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    cursor: pointer;
+    color: #fff;
+}
+#calendar a{
+   color: #fff;
+}
+
+/* 일정 추가 */
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
+    margin-top: 0;
+}
+#todo_container {
+    border: 1rem solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 auto;
+}
+
+/* 이벤트 추가 및 제거 버튼 */
+#addEventButton {
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 960px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 2px gray;
+    filter: blur(0.5px);
+    background-color: rgba(240, 234, 234, 0.9);
+}
+#addEventButton:hover {
+    background-color: #fffcfc;
+}
+
+#cur_date {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+    padding: 15px;
+}
+
+#todoform {
+    text-align: center;
+}
+
+#todoform input {
+    text-align: center;
+   background-color: rgba(255, 255, 255, 0.7);
+    color: white;
+    font-size: 2rem;
+    width: 540px;
+    transition: all, 0.4s;
+}
+
+#todoform input:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#todoform input:focus {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#todoform input::-webkit-input-placeholder {
+    color: rgb(50, 50, 50);
+}
+#todolist {
+    width: 540px;
+    height: 400px;
+    overflow-x: hidden;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+#todolist li {
+    display: flex;
+    gap: 400px;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    width: 540px;
+    list-style: none;
+    padding: 10px 20px;
+    padding-right: 70px;
+    position: relative; /* 리스트 아이템 기준으로 버튼 배치 */
+    white-space:normal;
+}
+#todolist li:first-child {
+    padding-top: 0;
+}
+
+
+#todolist button {
+    position: absolute; /* 리스트 아이템 내부에서 상대적 위치 */
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    border: 0;
+    background: 0;
+    font-size: 20px;
+    left: 460px;
+}
+
+#todolist button:hover {
+    cursor: pointer;
+}

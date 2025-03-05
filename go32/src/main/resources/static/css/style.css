@@ -1,0 +1,769 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: #333;
+}
+
+#wrap {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   position: relative;
+}
+
+aside {
+   width: 17%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: #000;
+   z-index: 200;
+}
+
+aside h1 {
+   width: 100%;
+   height: 20%;
+   background-color: #000000;
+   font-size: 30px;
+   padding: 20px 20px;
+}
+
+aside h1 a {
+   display: inline-block;
+   padding: 15px 30px;
+   color: #fff;
+}
+
+aside nav {
+   width: 100%;
+   height: calc(80% + 1149px);
+   background-color: #000000;
+}
+
+aside nav ul {
+   padding: 30px 40px;
+}
+
+aside nav .chatbot {
+   display: none;
+}
+
+aside nav ul li a {
+   color: #fff;
+   line-height: 2.5;
+   font-size: 20px;
+   padding: 10px 20px;
+   text-align: center;
+   border-radius: 5px;
+   font-weight: bold;
+}
+
+aside nav ul li a:hover {
+   background-color: #9c9c9c;
+   opacity: 0.9;
+   transition: 0.2s;
+}
+
+/* main */
+main {
+   width: 83%;
+   height: 100%;
+   background-color: #000;
+   margin-left: 17%;
+}
+
+#main_header {
+   width: 100%;
+   height: 10%;
+   background-color: #000000;
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 100;
+}
+
+header img {
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   position: absolute;
+   top: 23px;
+   right: 150px;
+   filter: invert(100%);
+}
+
+header img:hover {
+   opacity: 0.7;
+}
+
+/* 마이페이지 팝업 */
+.my_pop {
+   width: 850px;
+   height: 400px;
+   background-color: #2c2c2c;
+   position: absolute;
+   top: 70px;
+   right: 185px;
+   z-index: 1000;
+   display: none;
+   padding: 10px;
+   border-radius: 10px;
+   transition: visibility 0.3s ease-in-out;
+}
+.mpCon {
+   display: flex;
+   height: 100%;
+   padding: 10px;
+}
+.my_pop .mp1 {
+   width: 30%;
+   height: 100%;
+   border-right: 1px solid #5c5c5c;
+}
+.my_pop .mp1 .tt1 {
+   color: #fff;
+   font-weight: bold;
+   font-size: 18px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid #5c5c5c;
+   margin-right: 10px;
+   padding-left: 10px;
+}
+.my_pop .mp1 .tm {
+   margin-top: 10px;
+   margin-right: 10px;
+}
+.my_pop .mp1 .tm .tm1{
+   background-color: #8f8f8f;
+   border-radius: 10px;
+}
+.my_pop .mp1 ul li {
+   width: 100%;
+}
+.my_pop .mp1 ul li a {
+   color: #fff;
+   font-size: 15px;
+   display: block;
+   padding: 10px;
+}
+.my_pop .mp1 ul li a:hover {
+   background-color: #8f8f8f;
+   border-radius: 10px;
+}
+.my_pop .mp2 {
+   width: 70%;
+   height: 100%;
+   padding: 0 15px;
+   color: #fff;
+}
+.mp2_con2 {
+    display: none;
+}
+.my_pop .mp2 ul li:first-child {
+   border-top: 1px solid #5c5c5c;
+}
+.my_pop .mp2 ul li {
+   display: flex;
+   border-bottom: 1px solid #5c5c5c;
+}
+.my_pop .mp2 ul li h4 {
+   width: 340px;
+   margin: 20px 0;
+   
+}
+.my_pop .mp2 ul li .key {
+   width: 150px;
+}
+.my_pop .mp2 ul li p{
+   margin: 20px 0;
+}
+.my_pop button {
+   position: absolute;
+   top: 335px;
+   right: 25px;
+   color: #fff;
+   font-size: 15px;
+   border: 0;
+   background: #707070;
+   padding: 10px;
+   border-radius: 30px;
+   cursor: pointer;
+   font-weight: bold;
+}
+.my_pop button:hover {
+   background-color: #868686;
+}
+
+.uid_con {
+   visibility: hidden; /* 기본적으로 안 보이게 설정 */
+   transition: visibility 0.3s ease-in-out;
+}
+.my_pop .mp2 ul .lilast{
+   cursor: pointer;
+}
+.my_pop .mp2 ul li:hover .uid_con {
+   visibility: visible; /* 마우스를 올리면 보이도록 설정 */
+}
+
+.p_user {
+   color: #fff;
+   position: absolute;
+   top: 31px;
+   right: 200px;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+#main_header button {
+   position: absolute;
+   top: 25px;
+   right: 50px;
+   font-size: 14px;
+   border-radius: 30px;
+   border: 0;
+   background-color: #fff;
+   cursor: pointer;
+   z-index: 100;
+}
+
+#main_header .logbtn:hover {
+   pointer-events: none;
+}
+
+#main_header a {
+   display: block;
+   padding: 10px 15px;
+   color: #000;
+}
+
+#main_header a:hover {
+   background-color: #cecece;
+   border-radius: 30px;
+   transition: 0.2s;
+   color: #000;
+}
+#space{
+   width: 100%;
+   height: 10%;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.sent {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+.typing {
+    font-style: italic;
+    color: #888;
+    background-color: #e0e0e0;
+}
+
+
+/* 슬라이드 컨테이너 */
+#contents {
+   width: 100%;
+   height: 90%;
+   position: relative;
+   color: white;
+}
+
+#contents #videoSection {
+   padding-right: 9%;
+}
+
+#contents .content1 {
+   width: 100%;
+   height: 857px;
+}
+
+#contents .content2 {
+   width: 100%;
+   height: 1150px;
+   background: #000;
+   padding-top: 60px;
+}
+
+#contents .content2 img {
+   width: 25px;
+   height: 25px;
+}
+
+.rotate-icon {
+   animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+from { transform:rotate(0deg);
+   }
+to {
+   transform: rotate(360deg);
+   }
+}
+#contents .content2 p:first-child {
+   font-size: 20px;
+   margin-bottom: 20px;
+   font-weight: normal;
+   padding-right: 9%;
+}
+
+#contents .content2 p {
+   text-align: center;
+   color: #fff;
+   font-weight: bold;
+   font-size: 2rem;
+   padding-right: 8%;
+}
+
+#contents .content2 .vdo {
+   margin: 0 auto;
+   width: 95%;
+   height: 800px;
+   margin-top: 40px;
+   position: relative;
+}
+
+#contents .content2 .vdo li {
+   display: none;
+}
+
+#contents .content2 .vdo li video {
+   filter: brightness(150%);
+   opacity: 0.9;
+}
+
+#contents .content2 .vdo .cat {
+   display: block;
+}
+
+#contents .content2 ul {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+   padding-right: 9%;
+}
+
+#contents .content2 ul li button {
+   width: 100px;
+   height: 40px;
+   margin: 10px;
+   font-size: 20px;
+   border-radius: 30px;
+   border: 0;
+   background: 0;
+   cursor: pointer;
+   color: #fff;
+   font-weight: bold;
+}
+
+#contents .content2 ul li button:hover {
+   background-color: #414141 !important;
+}
+
+/* 이미지 슬라이드 */
+.imgs {
+    width: 92%;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10;
+}
+
+/* 활성화된 슬라이드 */
+.active {
+    opacity: 1;
+}
+
+/* 이전/다음 버튼 공통 스타일 */
+.btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);  /* 수직 중앙 정렬 */
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 20;
+}
+
+/* 개별 버튼 위치 조정 */
+.prev {
+    left: 2%;
+}
+
+.next {
+    right: 10%;
+}
+
+video {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   object-fit: cover;
+   filter: brightness(0.7) contrast(1.2); /* 밝기와 대비 조정 */
+   opacity: 0.8;
+   z-index: 10;
+}
+
+.video_text {
+   font-size: 60px;
+   z-index: 100;
+   color: rgba(255, 255, 255, 0.9);
+   position: absolute;
+   left: calc(50% - 4.5%);
+   top: 50%;
+   transform: translate(-50%, -50%);
+   font-weight: bold;
+   mix-blend-mode: overlay;
+   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+   animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* 濡쒓렇 씤  뙘 뾽 */
+.login_popup {
+   width: 140px;
+   height: 70px;
+   background-color: #fff;
+   position: fixed;
+   right: 50px;
+   top: 80px;
+   text-align: center;
+   border-radius: 10px;
+   opacity: 0.8;
+}
+
+.login_popup ul {
+   padding: 5px 10px;
+   height: 100%;
+}
+
+.login_popup ul li a {
+   font-size: 15px;
+   font-weight: bold;
+   line-height: 2;
+   display: block;
+}
+
+.login_popup ul li a:hover {
+   background-color: #dddddd;
+   border-radius: 5px;
+   transition: 0.2s;
+}
+
+.login_popup {
+   display: block;
+   height: 0;
+   overflow: hidden;
+   transition: 0.2s;
+   z-index: 100;
+}
+
+.find_acc {
+   width: 300px;
+   margin-top: 520px;
+   margin-left: 250px;
+}
+
+.find_acc ul {
+   display: flex;
+   font-size: 20px;
+   justify-content: space-between;
+}
+
+.find_acc ul li a {
+   display: block;
+   color: #fff;
+}
+
+.find_acc ul li a:hover {
+   opacity: 0.8;
+   text-decoration: underline;
+}
+
+/*  쉶 썝媛  엯  뙘 뾽 */
+.signup_pop_page {
+   width: 700px;
+   height: 650px;
+   background-color: rgba(40, 40, 40, 0.9);
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 9999;
+   border-radius: 30px;
+   box-shadow: 10px 10px 20px #000;
+   display: none;
+}
+
+.signup_pop_page .close-btn img {
+   width: 30px;
+   height: 30px;
+}
+
+.signup_pop_page .close-btn a {
+   display: block;
+   position: absolute;
+   top: 30px;
+   right: 30px;
+}
+
+.signup_form {
+   width: 100%;
+   position: absolute;
+   left: 50%;
+   top: 45%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   margin-top: 40px;
+}
+
+.signup_form h2 {
+   margin-bottom: 20px;
+   font-size: 40px;
+   color: #fff;
+}
+
+.signup_form label {
+   line-height: 2;
+   font-size: 20px;
+   font-weight: bold;
+   color: #fff;
+}
+
+.signup_form input {
+   border-radius: 30px;
+   border: 1px solid #333;
+   width: 300px;
+   height: 50px;
+   font-size: 20px;
+   padding: 20px;
+}
+
+.signup_form button {
+   border-radius: 30px;
+   border: 1px solid #000;
+   background-color: #000;
+   cursor: pointer;
+   padding: 17px 135px;
+   border-radius: 30px;
+   color: #fff;
+   font-weight: bold;
+   font-size: 15px;
+}
+
+.signup_form button:hover {
+   opacity: 0.7;
+}
+
+.s_pop2 {
+   display: block;
+   margin-bottom: 70px;
+   display: none;
+}
+
+#travel-purpose {
+   width: 300px;
+   height: 50px;
+   font-size: 20px;
+   border-radius: 30px;
+   padding-left: 10px;
+}
+
+.b_s {
+   display: flex;
+   justify-content: center;
+}
+
+.b_s button, .b_s input {
+   margin-top: 20px;
+   margin: 15px;
+   padding: 17px 95px;
+}
+
+.b_s input {
+   width: 227px;
+   height: 56px;
+   border-radius: 30px;
+   border: 1px solid #000;
+   background-color: #000;
+   cursor: pointer;
+   border-radius: 30px;
+   color: #fff;
+   font-weight: bold;
+   font-size: 15px;
+}
+
+.b_s input:hover {
+   opacity: 0.7;
+}
+
+/* 濡쒓렇 씤  뙘 뾽  뒪   씪 */
+.login_pop_page {
+   width: 700px;
+   height: 650px;
+   background-color: rgba(40, 40, 40, 0.9);
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 9999;
+   border-radius: 30px;
+   box-shadow: 10px 10px 20px #000;
+   display: none;
+   text-align: center;
+}
+
+.login_form {
+   padding: 20px;
+}
+
+.login_form h2 {
+   margin-bottom: 20px;
+   font-size: 40px;
+   color: #fff;
+}
+
+.login_form label {
+   line-height: 2;
+   font-size: 20px;
+   font-weight: bold;
+   color: #fff;
+}
+
+.login_form input {
+   width: 90%;
+   height: 35px;
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+.login_form button {
+   margin-top: 20px;
+   padding: 10px 15px;
+   border: none;
+   background-color: #000;
+   color: #fff;
+   font-size: 16px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.login_form button:hover {
+   opacity: 0.7;
+}
+
+/*  떕湲  踰꾪듉 */
+.close-btn {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   filter: invert(100%);
+}
+
+.close-btn img {
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+}
+
+/* 濡쒓렇 씤  뙘 뾽 踰꾪듉  쐞移  議곗젙 */
+.login_popup {
+   display: block;
+   height: 0;
+   overflow: hidden;
+   transition: 0.5s;
+   z-index: 100;
+}
+
+/* 濡쒓렇 씤  뙘 뾽  솕硫   뒪   씪 異붽  */
+.login_pop_page .close-btn img {
+   width: 30px;
+   height: 30px;
+}
+
+.login_pop_page .close-btn a {
+   display: block;
+   position: absolute;
+   top: 30px;
+   right: 30px;
+}
+
+.login_form {
+   width: 100%;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+}
+
+.login_form input {
+   border-radius: 30px;
+   border: 1px solid #333;
+   width: 300px;
+   height: 50px;
+   font-size: 20px;
+   padding: 10px;
+}
+
+.login_form button {
+   border-radius: 30px;
+   border: 1px solid #000;
+   background-color: #000;
+   cursor: pointer;
+   padding: 17px 135px;
+   color: #fff;
+   font-weight: bold;
+   font-size: 15px;
+   margin-top: 20px;
+}
+
+.login_form button:hover {
+   opacity: 0.7;
+}
+
+@
+keyframes fadeIn {from { opacity:0;
+   transform: translate(-50%, -60%);
+}
+
+to {
+   opacity: 1;
+   transform: translate(-50%, -50%);
+}
+}
