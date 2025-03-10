@@ -32,26 +32,28 @@
 <br>
 
 ## 📌 서비스 흐름도
+![image](https://github.com/user-attachments/assets/1959c503-b26a-40ef-ab09-b89bcb120ee5)
 <br>
 
 ## 📌 ER다이어그램
-
+![image](https://github.com/user-attachments/assets/78ad2e60-599b-4336-8399-74ed60d8ac80)
 <br>
 
 ## 🖥 화면 구성
 
 ### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
+![image](https://github.com/user-attachments/assets/be65865c-9ee8-4a3c-a9f9-fe1d30be0848)
 <br>
 
 ### 채팅/캘린더/레포트
+![image](https://github.com/user-attachments/assets/f68ebc65-02ac-4f87-a74d-117652ae21f5)
+![image](https://github.com/user-attachments/assets/c14860be-c590-4cee-94bb-a7e36de2a5fe)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
+![image](https://github.com/user-attachments/assets/1d31f17b-d43d-4ff9-a60b-a473d4a54dfe)
 
 
 ## 🤾‍♂️ 트러블슈팅
-  
-* 문제1<br>
+![image](https://github.com/user-attachments/assets/3575b214-ef20-4c25-84c5-82ed9ec1e1c3)
 
- 
-* 문제2<br>
